@@ -1,0 +1,55 @@
+{
+  "_resourceType": "variables",
+  "variables": [
+    {
+      "id": "0",
+      "name": "BallX",
+      "symbol": "var_ballx"
+    },
+    {
+      "id": "1",
+      "name": "BallY",
+      "symbol": "var_bally"
+    },
+    {
+      "id": "2",
+      "name": "headedToEnemy",
+      "symbol": "var_headedtoenemy"
+    },
+    {
+      "id": "3",
+      "name": "PaddleX",
+      "symbol": "var_paddlex"
+    },
+    {
+      "id": "4",
+      "name": "PaddleY",
+      "symbol": "var_paddley"
+    },
+    {
+      "id": "5",
+      "name": "EnemyScore",
+      "symbol": "var_enemyscore"
+    },
+    {
+      "id": "6",
+      "name": "PlayerScore",
+      "symbol": "var_playerscore"
+    },
+    {
+      "id": "6860dd85-21e5-4d0f-ad5e-567ec6b9adff__L0",
+      "name": "MoveX",
+      "symbol": "var_movex_0"
+    },
+    {
+      "id": "6860dd85-21e5-4d0f-ad5e-567ec6b9adff__L1",
+      "name": "MoveY",
+      "symbol": "var_movey"
+    },
+    {
+      "id": "6860dd85-21e5-4d0f-ad5e-567ec6b9adff__L2",
+      "name": "GoingUp",
+      "symbol": "var_goingup"
+    }
+  ]
+}

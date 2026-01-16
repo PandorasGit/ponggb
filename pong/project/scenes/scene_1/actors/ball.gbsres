@@ -1,0 +1,446 @@
+{
+  "_resourceType": "actor",
+  "id": "6860dd85-21e5-4d0f-ad5e-567ec6b9adff",
+  "name": "Ball",
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "832b476c-afde-401b-8343-af35353c3eec",
+  "prefabId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "paletteId": "",
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "1",
+  "prefabScriptOverrides": {},
+  "symbol": "actor_1",
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "2",
+        "value": {
+          "type": "true"
+        }
+      },
+      "id": "2bd3b409-fbd9-4f76-a7a1-30fa83a353f2"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "L2",
+        "value": {
+          "type": "bNOT",
+          "value": {
+            "type": "variable",
+            "value": "L2"
+          }
+        },
+        "__collapse": true
+      },
+      "id": "1ffdde11-965a-42bd-a7e4-9bd5d8ddd225"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "L0",
+        "value": {
+          "type": "number",
+          "value": 8
+        }
+      },
+      "id": "642c7de3-2b8b-4018-9bf2-912224659cf2"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "L1",
+        "value": {
+          "type": "number",
+          "value": 9
+        }
+      },
+      "id": "00cc2001-f6bf-40da-8fdc-f3a7d6c55c92"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_ACTOR_GET_POSITION",
+      "args": {
+        "actorId": "$self$",
+        "vectorX": "0",
+        "vectorY": "1",
+        "__collapse": false
+      },
+      "id": "3d7c30aa-775e-4b93-99bf-ad4dc7012126"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "lte",
+          "valueA": {
+            "type": "variable",
+            "value": "0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "5"
+            },
+            "id": "00166817-b6a0-412b-b99c-d526451e3bab"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "number",
+                "value": 9
+              },
+              "y": {
+                "type": "number",
+                "value": 9
+              }
+            },
+            "id": "bd480754-0fa2-4ca7-83b4-5cb3fa7887c0"
+          }
+        ],
+        "false": []
+      },
+      "id": "0320f63c-5d23-43cd-8f60-4ce3bb81e950"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gte",
+          "valueA": {
+            "type": "variable",
+            "value": "0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 18
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "6"
+            },
+            "id": "7e1e125c-7c07-4d28-a801-61d71aef09e6"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "number",
+                "value": 9
+              },
+              "y": {
+                "type": "number",
+                "value": 9
+              }
+            },
+            "id": "4dd40a7d-5b9d-4742-9269-3e6a05bc4bbc"
+          }
+        ],
+        "false": []
+      },
+      "id": "63dfbf25-f1ae-45d5-b23a-435c8a5038b7"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "2"
+          },
+          "valueB": {
+            "type": "true"
+          }
+        },
+        "__collapseElse": false,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "L0"
+            },
+            "id": "7636f6ef-9bf3-4c94-88d3-ebdec25c922e"
+          }
+        ],
+        "false": []
+      },
+      "id": "8f7399af-9e49-495a-adc2-0a353234a502"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "2"
+          },
+          "valueB": {
+            "type": "false"
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_DEC_VALUE",
+            "args": {
+              "variable": "L0"
+            },
+            "id": "aeeabf01-09e4-4149-a5a8-06f2236371be"
+          }
+        ],
+        "false": []
+      },
+      "id": "1d2cb399-9c67-43c1-a8ab-ff4ca628a713"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "L2"
+          },
+          "valueB": {
+            "type": "true"
+          }
+        },
+        "__collapseElse": false,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_DEC_VALUE",
+            "args": {
+              "variable": "L1"
+            },
+            "id": "e4d83aa3-554f-4a35-900a-0ac555396e46"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "L1"
+            },
+            "id": "846bd23f-1ee0-487a-8203-cc2fad1b8b7b"
+          }
+        ]
+      },
+      "id": "0c143a2f-3aaa-4f46-9bc5-c6378c2a595e"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "1"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L2",
+              "value": {
+                "type": "false"
+              }
+            },
+            "id": "ae2d1e3c-1b1b-448a-9dbb-ca3c63106005"
+          }
+        ],
+        "false": []
+      },
+      "id": "77f004a6-cbbc-4221-b745-864e0592ee07"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "1"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 17
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L2",
+              "value": {
+                "type": "true"
+              }
+            },
+            "id": "e4c930e9-b76a-4def-827f-5756ff68cf1f"
+          }
+        ],
+        "false": []
+      },
+      "id": "3ea1a05c-f5c2-4b1e-82ce-ce8ec9635c9d"
+    },
+    {
+      "command": "EVENT_ACTOR_MOVE_TO",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "variable",
+          "value": "L0"
+        },
+        "y": {
+          "type": "variable",
+          "value": "L1"
+        },
+        "moveType": "diagonal",
+        "useCollisions": false,
+        "__collapse": true
+      },
+      "id": "64ccb67e-35ea-4ce2-8080-b335ac890064"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "1"
+          },
+          "valueB": {
+            "type": "variable",
+            "value": "4"
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "0"
+                },
+                "valueB": {
+                  "type": "variable",
+                  "value": "3"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "2",
+                    "value": {
+                      "type": "false"
+                    },
+                    "__collapse": true
+                  },
+                  "id": "4dd5a29f-0c54-47f7-8312-4917af04e2f3"
+                },
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "L2",
+                    "value": {
+                      "type": "bNOT",
+                      "value": {
+                        "type": "variable",
+                        "value": "L2"
+                      }
+                    }
+                  },
+                  "id": "0252299d-bf24-482d-b0d7-714394e8acc7"
+                }
+              ],
+              "false": []
+            },
+            "id": "6fa88e56-f6a6-4d71-8176-cf24dea87aea"
+          }
+        ],
+        "false": []
+      },
+      "id": "c4412409-946f-4a2f-a5dd-eaa6e2086b29"
+    }
+  ],
+  "hit1Script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "2",
+        "value": {
+          "type": "false"
+        }
+      },
+      "id": "db3e251b-f39a-44bb-a221-0c6137a254b8"
+    }
+  ],
+  "hit2Script": [],
+  "hit3Script": [],
+  "x": 9,
+  "y": 9,
+  "_index": 1
+}
